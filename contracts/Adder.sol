@@ -8,6 +8,11 @@ contract Adder {
     string name
   );
 
+  //new constructor
+  function Adder() {
+    result = 1234;
+  }
+
   function addNumbers(uint a, uint b) public {
     result = a + b;
     ResultEvent(result, 'hello there');
