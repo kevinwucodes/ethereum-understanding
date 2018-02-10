@@ -49,8 +49,21 @@ const doit = async () => {
   instance.setProvider(provider)
 
   // calling getResult on the instance's contract
-  const result = await instance.methods.getResult().call()
+  let result = await instance.methods.getResult().call()
+  console.log('result: ', result)
 
+  // send tx to add two numbers
+  let addingOperation = await instance.methods.addNumbers(4, 5)
+  addingOperation = await addingOperation.send({
+    from: acct1,
+    gas: await addingOperation.estimateGas(),
+    //typical gasPrice is 20 gwei = 20 billion wei
+    gasPrice: web3.utils.toWei('20', 'gwei')
+  })
+  console.log('addingOperation: ', addingOperation)
+
+  // see the result after adding
+  result = await instance.methods.getResult().call()
   console.log('result: ', result)
 }
 
