@@ -16,6 +16,16 @@ global.acct2 = '0xf17f52151ebef6c7334fad080c5704d77216b732'
 global.acct3 = '0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef'
 global.acct4 = '0x821aea9a577a9b44299b9c15c88cf3087f3b5544'
 
+global.getBalance = async acct =>
+web3.utils.fromWei(await web3.eth.getBalance(acct), 'ether')
+
+global.getMultipleBalances = async () => {
+  //get balances
+  console.log('acct1 balance:', await getBalance(acct1))
+  console.log('acct2 balance:', await getBalance(acct2))
+}
+
+
 global.rawSources = {
   // 'oraclizeAPI_0.5.sol': loadContract('./contracts/oraclizeAPI_0.5.sol'),
   // 'WolframAlpha.sol': loadContract('./contracts/WolframAlpha.sol')
