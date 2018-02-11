@@ -43,15 +43,6 @@ global.contract = new web3.eth.Contract(abi, { data: bytecode })
 // // the transaction object
 global.transactionObject = contract.deploy()
 
-global.getBalance = async acct => {
-  return web3.utils.fromWei(await web3.eth.getBalance(acct), 'ether')
-}
-
-global.getMultipleBalances = async () => {
-  //get balances
-  console.log('acct1 balance:', await getBalance(acct1))
-  console.log('acct2 balance:', await getBalance(acct2))
-}
 
 ///////////////////////
 
