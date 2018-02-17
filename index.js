@@ -1,19 +1,24 @@
-// const rpc = 'http://localhost:8545'
+const {
+  web3,
+  provider,
 
-//ropsten network
-const rpc = 'https://ropsten.infura.io/{use-your-ropsten-api-key-here}'
+  toHex,
+  toWei,
 
-const fs = require('fs')
+  loadContract,
+  solc,
 
-global.Web3 = require('web3') //Ethereum JS API
-global.EthereumTx = require('ethereumjs-tx')
-global.solc = require('solc') //JS Solidity Compiler
+  EthereumTx
+} = require('./helpers')
 
-global.provider = new Web3.providers.HttpProvider(rpc)
+global.web3 = web3
+global.provider = provider
+global.toHex = toHex
+global.toWei = toWei
+global.loadContract = loadContract
+global.solc = solc
+global.EthereumTx = EthereumTx
 
-global.web3 = new Web3(provider)
-
-global.loadContract = path => fs.readFileSync(path, 'utf8')
 
 // these are ganache accounts
 // global.acct1 = '0x627306090abaB3A6e1400e9345bC60c78a8BEf57'
