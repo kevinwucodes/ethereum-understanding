@@ -11,7 +11,7 @@ const {
   solc,
 
   EthereumTx
-} = require('./helpers')
+} = require('../helpers')
 
 global.web3 = web3
 global.provider = provider
@@ -38,7 +38,7 @@ global.ethTx = {
 
   to: recipient,
   value: web3.utils.toHex(web3.utils.toWei('1', 'ether')),
-  
+
   // EIP 155 chainId - mainnet: 1, ropsten: 3
   chainId: 3
 }

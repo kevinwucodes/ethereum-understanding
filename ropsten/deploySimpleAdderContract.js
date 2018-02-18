@@ -9,7 +9,7 @@ const {
   solc,
 
   EthereumTx
-} = require('./helpers')
+} = require('../helpers')
 
 global.web3 = web3
 global.provider = provider
