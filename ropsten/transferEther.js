@@ -27,7 +27,10 @@ global.privateKey = Buffer.from(
   'hex'
 )
 
-const recipient = '{recipient-address-goes-here}'
+global.publicKey = web3.eth.accounts.privateKeyToAccount(
+  `0x${privateKey.toString('hex')}`
+).address
+
 
 global.ethTx = {
   //nonce is the 'transaction sequence'
