@@ -6,6 +6,8 @@ contract FuelPrice is usingOraclize {
 
     uint public DieselPriceUSD;
 
+    string private DIESEL_URL = "xml(https://www.fueleconomy.gov/ws/rest/fuelprices).fuelPrices.diesel";
+
     event newOraclizeQuery(string description);
     event newDieselPrice(string price);
 
@@ -22,7 +24,7 @@ contract FuelPrice is usingOraclize {
 
     function update() payable {
         newOraclizeQuery("Oraclize query was sent, standing by for the answer..");
-        oraclize_query("URL", "xml(https://www.fueleconomy.gov/ws/rest/fuelprices).fuelPrices.diesel");
+        oraclize_query("URL", DIESEL_URL);
     }
 
 }

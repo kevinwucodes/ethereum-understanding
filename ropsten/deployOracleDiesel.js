@@ -44,8 +44,8 @@ global.publicKey = web3.eth.accounts.privateKeyToAccount(
 
 global.ethTx = {
   //nonce is the 'transaction sequence'
-  nonce: '0x0c',
-  gasPrice: web3.utils.toHex(web3.utils.toWei('15', 'gwei')), //0x037e11d600
+  nonce: '0x0e',
+  gasPrice: web3.utils.toHex(web3.utils.toWei('10', 'gwei')),
   gasLimit: web3.utils.toHex('2000000'), //0x1e8480
 
   // give this contract some ether to power it
@@ -65,13 +65,13 @@ global.ethTx = {
 global.tx = new EthereumTx(ethTx)
 
 //sign transaction
-// tx.sign(privateKey)
+tx.sign(privateKey)
 //
 // //send tx to chain
-// web3.eth
-// .sendSignedTransaction(`0x${tx.serialize().toString('hex')}`)
+web3.eth
+.sendSignedTransaction(`0x${tx.serialize().toString('hex')}`)
 //   // could take some time to be mined
-// .on('receipt', console.log)
+.on('receipt', console.log)
 
 ////////////////////
 //after we deploy, lets interact with it
