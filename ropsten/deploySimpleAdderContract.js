@@ -51,7 +51,7 @@ global.publicKey = web3.eth.accounts.privateKeyToAccount(
 
 global.ethTx = {
   //nonce is the 'transaction sequence'
-  nonce: '0x08',
+  nonce: '0x17',
   gasPrice: web3.utils.toHex(web3.utils.toWei('20', 'gwei')),
   gasLimit: web3.utils.toHex('200000'),
 
