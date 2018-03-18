@@ -1,4 +1,4 @@
-pragma solidity ^0.4.19;
+pragma solidity ^0.4.20;
 
 contract Adder {
   uint result;
@@ -9,7 +9,7 @@ contract Adder {
   );
 
   //new constructor
-  function Adder() {
+  function Adder() public {
     result = 1234;
   }
 
