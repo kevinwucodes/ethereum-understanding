@@ -18,10 +18,7 @@ contract FuelPrice is usingOraclize {
     event newOraclizeQuery(string description);
     event newDieselPrice(string price);
 
-    // function DieselPrice() {
-        // update(); // first check at contract creation
-    // }
-
+    // oracle callbacks
     function __callback(bytes32 myid, string result) {
       //if we dont have any valid oraclize IDs, get out of there
       if (!validOraclizeIds[myid]) throw;
